@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import Product from "./Product.js";
 import useFetch from "../useFetch.js";

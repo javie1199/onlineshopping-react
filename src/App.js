@@ -1,10 +1,10 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import Home from "./Home";
 import About from "./About";
 import Navbar from "./Navbar";
 import Products from "./products/Products";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ProductDetails from "./products/ProductDetails";
 
 const App = () => {
   const [cart, setCart] = useState(function() {
@@ -72,6 +72,9 @@ const App = () => {
               onProductAdd={handleProductAdd}
               onProductDelete={handleProductDelete}
             />
+          </Route>
+          <Route path="/products/:id">
+            <ProductDetails onProductAdd={handleProductAdd} />
           </Route>
         </Switch>
       </div>
