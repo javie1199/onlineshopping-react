@@ -141,3 +141,12 @@ a:hover {
   text-align: center;
   padding: 10px 25px;
 }
+
+/* Pages */
+.home-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  place-items: center;
+  grid-gap: 20px;
+  padding-top: 40px;
+}
