@@ -1,3 +1,5 @@
+import "./Loader.Style.css";
+
 export default function Loader() {
   return (
     <svg
