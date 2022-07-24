@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import "./Button.Style.css";
 
 export default function Button(props) {
   const { children, outline, className, ...rest } = props;
