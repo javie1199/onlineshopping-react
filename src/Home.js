@@ -10,10 +10,11 @@ export default function Home() {
           Order your groceries from <em>J-Mart</em> with our easy to use app,
           and get your products delivered straight to your doorstep.
         </p>
+        <Link to="/products" className="btn btn-default">
+          Start shopping
+        </Link>
       </div>
-      <Link to="/products" className="btn btn-default">
-        Start shopping
-      </Link>
+
       <img
         src="https://res.cloudinary.com/dbfn5lnvx/image/upload/q_auto,w_700/v1607770215/react-tutorial/supermarket/home.jpg"
         width="350"
