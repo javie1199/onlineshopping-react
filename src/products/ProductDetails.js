@@ -6,7 +6,7 @@ import {
   useParams,
   useRouteMatch,
 } from "react-router-dom";
-import useFetch from "../useFetch.js";
+import useFetch from "../helpers/useFetch";
 import ProductDetailInfo from "./ProductDetailInfo.js";
 import ProductDetailNutrition from "./ProductDetailNutrition.js";
 import ProductDetailStorage from "./ProductDetailStorage.js";

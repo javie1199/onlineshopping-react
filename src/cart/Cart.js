@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import Input from "../Input.js";
-import Button from "../Button.js";
+import Input from "../template/Input";
+import Button from "../template/Button.js";
 import React from "react";
 import "./Cart.Style.css";
 

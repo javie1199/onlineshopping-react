@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Button.js";
+import Button from "../template/Button.js";
 
 export default function ProductDetailInfo({ product, onProductAdd }) {
   return (

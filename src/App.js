@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Home from "./Home";
-import About from "./About";
-import Navbar from "./Navbar";
+import Home from "./container/Home";
+import About from "./container/About";
+import Navbar from "./navbar/Navbar";
 import Cart from "./cart/Cart";
 import Products from "./products/Products";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
