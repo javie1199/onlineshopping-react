@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Home from "./Home";
 import About from "./About";
 import Navbar from "./Navbar";
+import Cart from "./cart/Cart";
 import Products from "./products/Products";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ProductDetails from "./products/ProductDetails";
@@ -57,7 +58,7 @@ const App = () => {
   }
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar cart={cart} />
       <div className="container">
         <Switch>
           <Route exact path="/">
@@ -75,6 +76,9 @@ const App = () => {
           </Route>
           <Route path="/products/:id">
             <ProductDetails onProductAdd={handleProductAdd} />
+          </Route>
+          <Route exact path="/cart">
+            <Cart cart={cart} />
           </Route>
         </Switch>
       </div>
