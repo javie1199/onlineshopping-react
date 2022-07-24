@@ -7,12 +7,13 @@ import "./Products.Style.css";
 export default function Products(props) {
   const [products, setProducts] = useState([]);
   const { get, loading } = useFetch(
-    "https://react-tutorial-demo.firebaseio.com/"
+    "https://react-jmart-default-rtdb.firebaseio.com/"
   );
 
   useEffect(() => {
-    get("supermarket.json")
+    get("products.json")
       .then((data) => {
+        console.log(data);
         setProducts(data);
       })
       .catch((error) => console.log("Could not load products", error));

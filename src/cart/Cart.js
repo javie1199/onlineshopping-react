@@ -30,8 +30,8 @@ export default function Cart({ cart }) {
         .redirectToCheckout({
           lineItems: lineItems,
           mode: "payment",
-          successUrl: "https://superm.react-tutorial.app/",
-          cancelUrl: "https://superm.react-tutorial.app/",
+          successUrl: "https://localhost:3000/",
+          cancelUrl: "https://localhost:3000/",
           customerEmail: email,
         })
         .then((response) => {
@@ -101,8 +101,13 @@ export default function Cart({ cart }) {
                 delivered to you on the same day!
                 <br />
                 <em>
-                  Use 4242 4242 4242 4242 card number and current or later date
-                  for testing with Stripe
+                  Use below information for checkout
+                  <ul>
+                    <li>Card number: 4242 4242 4242 4242</li>
+                    <li>Month: Any valid month (1 to 12)</li>
+                    <li>Year: Any valid year (current year or above)</li>
+                    <li>CVC: Any 3 digits (for example, 123)</li>
+                  </ul>
                 </em>
               </p>
               <Input
