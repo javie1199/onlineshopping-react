@@ -14,16 +14,17 @@ import "./ProductDetails.Style.css";
 
 export default function ProductDetails(props) {
   const [product, setProduct] = useState({});
-  const { get } = useFetch("https://react-tutorial-demo.firebaseio.com/");
+  const { getUrl } = useFetch("https://react-tutorial-demo.firebaseio.com/");
   const params = useParams();
   const match = useRouteMatch();
 
   useEffect(() => {
-    get(`productinfo/id${params.id}.json`)
+    getUrl(`productinfo/id${params.id}.json`)
       .then((data) => {
         setProduct(data);
       })
       .catch((error) => console.log("Could not load product details", error));
+    // eslint-disable-next-line
   }, []);
 
   return (

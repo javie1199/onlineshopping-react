@@ -6,17 +6,18 @@ import "./Products.Style.css";
 
 export default function Products(props) {
   const [products, setProducts] = useState([]);
-  const { get, loading } = useFetch(
+  const { getUrl, loading } = useFetch(
     "https://react-jmart-default-rtdb.firebaseio.com/"
   );
 
   useEffect(() => {
-    get("products.json")
+    getUrl("products.json")
       .then((data) => {
         console.log(data);
         setProducts(data);
       })
       .catch((error) => console.log("Could not load products", error));
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -40,3 +41,4 @@ export default function Products(props) {
     </div>
   );
 }
+// eslint-disable-next-line

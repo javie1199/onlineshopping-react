@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function useFetch(baseUrl) {
   const [loading, setLoading] = useState(true);
 
-  function get(url) {
+  function getUrl(url) {
     return new Promise((resolve, reject) => {
       fetch(baseUrl + url)
         .then((response) => response.json())
@@ -49,5 +49,5 @@ export default function useFetch(baseUrl) {
     });
   }
 
-  return { get, post, loading };
+  return { getUrl, post, loading };
 }
