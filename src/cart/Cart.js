@@ -30,8 +30,8 @@ export default function Cart({ cart }) {
         .redirectToCheckout({
           lineItems: lineItems,
           mode: "payment",
-          successUrl: "https://localhost:3000/",
-          cancelUrl: "https://localhost:3000/",
+          successUrl: "https://jmartshopping.netlify.app",
+          cancelUrl: "https://jmartshopping.netlify.app",
           customerEmail: email,
         })
         .then((response) => {
