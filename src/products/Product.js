@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from "../template/Button.js";
 import "./Product.style.css";
+import React from "react";
 
 export default function Product(props) {
   const { details } = props;
@@ -35,13 +36,22 @@ export default function Product(props) {
       <div className="product-checkout">
         <div>
           {quantity > 0 && (
-            <Button
-              outline
-              onClick={() => props.onProductDelete(details.id)}
-              className="product-delete"
-            >
-              x
-            </Button>
+            <React.Fragment>
+              <Button
+                outline
+                onClick={() => props.onProductDecrease(details)}
+                className="product-decrease"
+              >
+                -
+              </Button>
+              <Button
+                outline
+                onClick={() => props.onProductDelete(details.id)}
+                className="product-delete"
+              >
+                x
+              </Button>
+            </React.Fragment>
           )}
         </div>
         <Button outline onClick={() => props.onProductAdd(details)}>

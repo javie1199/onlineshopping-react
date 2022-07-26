@@ -34,6 +34,7 @@ export default function Products(props) {
               cart={props.cart}
               onProductAdd={props.onProductAdd}
               onProductDelete={props.onProductDelete}
+              onProductDecrease={props.onProductDecrease}
             />
           );
         })}

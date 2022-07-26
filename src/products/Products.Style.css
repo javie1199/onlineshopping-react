@@ -30,6 +30,15 @@
   font-size: 14px;
 }
 
+.product-decrease {
+  background-color: white;
+  padding: 5px 10px;
+  color: var(--accent-1);
+  border-color: var(--accent-2);
+  font-size: 14px;
+  margin-right: 10px;
+}
+
 .product-image-container {
   position: relative;
 }
