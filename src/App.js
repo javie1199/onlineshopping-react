@@ -8,7 +8,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ProductDetails from "./products/ProductDetails";
 
 const App = () => {
-  const [cart, setCart] = useState(function() {
+  const [cart, setCart] = useState(function () {
     let savedCart = [];
     try {
       savedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -25,6 +25,19 @@ const App = () => {
   }, [cart]);
   function handleProductDelete(id) {
     const updatedCart = cart.filter((product) => product.id !== id);
+    setCart(updatedCart);
+  }
+
+  function handleProductDecrease(currentProduct) {
+    const updatedCart = cart.map((product) => {
+      if (product.id === currentProduct.id) {
+        return {
+          ...product,
+          quantity: product.quantity - 1,
+        };
+      }
+      return product;
+    });
     setCart(updatedCart);
   }
 
@@ -72,6 +85,7 @@ const App = () => {
               cart={cart}
               onProductAdd={handleProductAdd}
               onProductDelete={handleProductDelete}
+              onProductDecrease={handleProductDecrease}
             />
           </Route>
           <Route path="/products/:id">
