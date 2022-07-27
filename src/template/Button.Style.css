@@ -65,3 +65,14 @@
   padding: 8px 25px;
   border-radius: 10px;
 }
+
+.btn-theme {
+  color: black ;
+  background-color: aliceblue;
+  border: none;
+  box-shadow: 1px 1px 7px #c4c4c4;
+}
+
+.btn-theme:hover {
+  background-color: var(--primary-1);
+}

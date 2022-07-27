@@ -1,12 +1,37 @@
 import { NavLink } from "react-router-dom";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.Style.css";
+import Button from "../template/Button";
+import { WiDaySunny } from "react-icons/wi";
+import { WiMoonWaxingCrescent4 } from "react-icons/wi";
 
 export default function Navbar(props) {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const cartCount = props.cart.reduce(
     (total, product) => total + product.quantity,
     0
   );
+
+  useEffect(() => {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    if (prefersDark) {
+      setIsDarkTheme(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [isDarkTheme]);
+
+  function handleThemeClick() {
+    setIsDarkTheme(!isDarkTheme);
+  }
 
   return (
     <nav className="navbar">
@@ -14,6 +39,14 @@ export default function Navbar(props) {
         J-Mart
       </NavLink>
       <ul>
+        <li className="nav-item">
+          <Button
+            className="theme-switcher btn-theme"
+            onClick={handleThemeClick}
+          >
+            {isDarkTheme ? <WiMoonWaxingCrescent4 /> : <WiDaySunny />}
+          </Button>
+        </li>
         <li className="nav-item">
           <NavLink exact activeClassName="active" to="/">
             Home

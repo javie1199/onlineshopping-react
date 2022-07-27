@@ -4,8 +4,10 @@
   grid-gap: 25px;
 }
 
+
+
 .product {
-  background-color: white;
+  background-color: var(--neutral-4);
   padding: 15px 20px;
   border-radius: 25px;
   display: grid;

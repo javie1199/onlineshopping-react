@@ -14,6 +14,8 @@ a:active {
 :root {
   --white: #fff;
   --black: #000;
+  --bg-color: white;
+  --text-color: black;
 
   /* Primary colors*/
   --primary-1: #2b8379;
@@ -35,11 +37,22 @@ a:active {
   --accent-3: #de7699;
   --accent-4: #e6c3ce;
   --accent-5: #fff2f7;
+
+  --surface-color: white;
+  --surface-shadow: #c4c4c4;
 }
 
 body {
   background-color: var(--neutral-5);
   margin: 0;
+}
+
+body.dark {
+  color: white;
+  --neutral-5: #222;
+  --neutral-4: rgb(73, 66, 66);
+  --surface-color: #444;
+  --surface-shadow: #222;
 }
 
 h1 {

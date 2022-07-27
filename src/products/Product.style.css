@@ -4,6 +4,8 @@
   border-radius: 20px;
 }
 
+
+
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -45,7 +47,7 @@
 }
 
 .table tbody tr:nth-child(2n) {
-  background-color: white;
+  background-color: var(--neutral-4);
 }
 
 .table tbody tr:nth-child(2n + 1) {
